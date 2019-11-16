@@ -33,4 +33,149 @@ export const works = [
     }
 ]
 
- 
+export const skills = [
+    {
+        title: 'Programming/Languages',
+        isDataObject: true,
+        data: [
+            {
+                title: 'Advance',
+                itemslist: [
+                    'Swift',
+                    'Javascript',
+                    'Node.js',
+                    'Python'
+                ]
+            },
+            {
+                title: 'Basic',
+                itemslist: [
+                    'NoSQL',
+                    'HTML',
+                    'Kotlin',
+                    'C#',
+                    'Typescript'
+                ]
+            }
+        ]
+    },
+    {
+        title: 'Version control',
+        data: [
+            'Git'
+        ]
+    },
+    {
+        title: 'Database',
+        data: [
+            'MongoDB',
+            'Firebase Firestore',
+            'GraphQL'
+        ]
+    },
+    {
+        title: 'Package manager',
+        data: [
+            'cocoapods',
+            'npm'
+        ]
+    },
+    {
+        title: 'Frameworks',
+        data: [
+            'React Native',
+            'ReactJS',
+            'ExpressJS'
+        ]
+    },
+    {
+        title: 'CICD',
+        data: [
+            'Bitrise',
+            'App Center',
+            'Gitlab pipeline'
+        ]
+    },
+    {
+        title: 'PaaS',
+        data: [
+            'Firebase',
+            'Google Cloud',
+            'Dialogflow',
+            'Heroku'
+        ]
+    },
+    {
+        title: 'External API',
+        data: [
+            'Line message API',
+            'Open weather API'
+        ]
+    },
+    {
+        title: 'Unit test',
+        data: [
+            'Jest',
+            'XcTest'
+        ]
+    }
+]
+
+export const sideProject = [
+    {
+        title: 'iOS Application',
+        data: [
+            {
+                title: 'Ling',
+                url: ''
+            }
+        ]
+    },
+    {
+        title: 'Github',
+        data: [
+            {
+                title: 'Hospital Information Bot',
+                url: 'https://github.com/notovel2/hospital-information-bot'
+            },
+            {
+                title: 'SMW bot',
+                url: 'https://github.com/notovel2/SMW_Bot'
+            },
+            {
+                title: 'Course management system',
+                url: 'https://github.com/notovel2/JAC_TEST'
+            },
+            {
+                title: 'Smart patient room (Senior project)',
+                url: 'https://github.com/notovel2/Smart_patients_room_system'
+            }
+        ]
+    }
+]
+
+export const education = [
+    {
+        period: '2014 - 2018',
+        name: 'Mahidol University',
+        provience: 'Nakhon Pathom',
+        country: 'Bangkok',
+        faculty: 'Bachelor of Engineering',
+        major: 'Computer Engineering'
+    }
+]
+
+export const contact = [
+    {
+        title: 'Address',
+        value: '318/620 The stage taopoon condominium , Pracharaj sai 2 Rd., Bangsue, Bangsue, Bangkok 10800'
+    },
+    {
+        title: 'Mobile',
+        value: '+66 85-109-9486'
+    },
+    {
+        title: 'E-mail',
+        value: 'watthanai.chot@gmail.com'
+    }
+]

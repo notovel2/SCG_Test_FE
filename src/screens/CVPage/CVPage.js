@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Card, Row } from 'react-bootstrap';
 import './CVPage.css'
-import {works} from '../../constants/cv'
+import { works, skills, sideProject, education, contact } from '../../constants/cv'
 
 class CVPage extends React.Component {
     render() {
@@ -20,6 +20,7 @@ class CVPage extends React.Component {
                         <Row>
                             <div className="col-sm-6 section">
                                 <Card.Title>Skills</Card.Title>
+                                {this.skillsRender(skills)}
                             </div>
                             <div className="col-sm-6 section">
                                 <Card.Title>Side Projects</Card.Title>
@@ -31,14 +32,34 @@ class CVPage extends React.Component {
         )
     }
 
-    workExperienceRender(work) {
+    workExperienceRender(data) {
         return (
             <div style={{marginTop: '10px'}}>
-                <Card.Subtitle>{work.position}</Card.Subtitle>
-                <Card.Subtitle>{work.workPlace} {work.period}</Card.Subtitle>
-                {work.responsibillity.map(value => this.bulletSection(value))}
+                <Card.Subtitle>{data.position}</Card.Subtitle>
+                <Card.Subtitle>{data.workPlace} {data.period}</Card.Subtitle>
+                {data.responsibillity.map(value => this.bulletSection(value))}
             </div>
         )
+    }
+
+    skillsRender(data) {
+        return data.map(skillItem => {
+            if (skillItem.isDataObject) {
+                return (
+                    <Card.Subtitle>{skillItem.title}</Card.Subtitle>
+                )
+            } else {
+                return (
+                    <div>
+                        <Row style={{alignItems: 'baseline', flexDirection: 'row'}}>
+                            <Card.Subtitle style={{marginRight: '5px'}}>{`${skillItem.title}:`}</Card.Subtitle>
+                            <Card.Text>{skillItem.data.join(', ')}</Card.Text>
+                        </Row>
+                    </div>
+                )
+            }
+            
+        })
     }
 
     bulletSection(text) {
