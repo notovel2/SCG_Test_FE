@@ -1,4 +1,4 @@
- const works = [
+export const works = [
     {
         position: 'iOS develoeper',
         workplace: 'Ascend food co.Ltd., Bangkok',
@@ -33,4 +33,4 @@
     }
 ]
 
-export default works
+ 

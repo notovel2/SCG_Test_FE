@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Card } from 'react-bootstrap';
+import { Container, Card, Row } from 'react-bootstrap';
 import './CVPage.css'
-import works from '../../constants/workExperience'
+import {works} from '../../constants/cv'
 
 class CVPage extends React.Component {
     render() {
@@ -12,8 +12,19 @@ class CVPage extends React.Component {
                         <Card.Title>Watthanai Chotcheewasunthorn</Card.Title>
                     </Card.Header>
                     <Card.Body style={{textAlign: 'left'}}>
-                        <Card.Title>Experience</Card.Title>
-                        {works.map(work => this.workExperienceRender(work))}
+                        <div className="section">
+                            <Card.Title>Experience</Card.Title>
+                            {works.map(work => this.workExperienceRender(work))}
+                        </div>
+
+                        <Row>
+                            <div className="col-sm-6 section">
+                                <Card.Title>Skills</Card.Title>
+                            </div>
+                            <div className="col-sm-6 section">
+                                <Card.Title>Side Projects</Card.Title>
+                            </div>
+                        </Row>
                     </Card.Body>
                 </Card>
             </Container>
@@ -22,7 +33,7 @@ class CVPage extends React.Component {
 
     workExperienceRender(work) {
         return (
-            <div>
+            <div style={{marginTop: '10px'}}>
                 <Card.Subtitle>{work.position}</Card.Subtitle>
                 <Card.Subtitle>{work.workPlace} {work.period}</Card.Subtitle>
                 {work.responsibillity.map(value => this.bulletSection(value))}
