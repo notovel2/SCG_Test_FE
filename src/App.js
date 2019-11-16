@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import TopBar from './components/TopBar';
+import CVPage from './screens/CVPage/CVPage';
+import HomePage from './screens/HomePage/HomePage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <TopBar/>
+        {this.renderBody()}
+      </div>
+    );
+  }
+
+  renderBody() {
+    return (
+      <Switch>
+        <Route exact path="/" component={HomePage}/>
+        <Route path="/cv" component={CVPage}/>
+      </Switch>
+    )
+  }
 }
 
 export default App;
