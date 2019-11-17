@@ -35,8 +35,10 @@ class CVPage extends React.Component {
     workExperienceRender(data) {
         return (
             <div style={{marginTop: '10px'}}>
-                <Card.Subtitle>{data.position}</Card.Subtitle>
-                <Card.Subtitle>{data.workPlace} {data.period}</Card.Subtitle>
+                <Row style={{marginLeft: 0}}>
+                    <Card.Subtitle>{data.position}</Card.Subtitle>
+                    <Card.Subtitle>{data.workPlace} {data.period}</Card.Subtitle>
+                </Row>
                 {data.responsibillity.map(value => this.bulletSection(value))}
             </div>
         )

@@ -5,6 +5,7 @@ import TopBar from './components/TopBar/TopBar';
 import CVPage from './screens/CVPage/CVPage';
 import HomePage from './screens/HomePage/HomePage';
 import SCGPage from './screens/SCGPage/SCGPage';
+import SearchPlaces from './screens/SearchPlaces/SearchPlaces';
 
 class App extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Route exact path="/" component={HomePage}/>
         <Route path="/cv" component={CVPage}/>
         <Route path='/scg' component={SCGPage}/>
+        <Route path='/places' component={SearchPlaces}/>
       </Switch>
     )
   }
