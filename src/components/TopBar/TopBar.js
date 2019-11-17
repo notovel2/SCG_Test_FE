@@ -10,7 +10,7 @@ class TopBar extends React.Component {
                     <Nav>
                         <Nav.Link href='/cv'>CV</Nav.Link>
                         <Nav.Link>Search Places</Nav.Link>
-                        <Nav.Link>Find XYZ</Nav.Link>
+                        <Nav.Link href='/scg'>SCG</Nav.Link>
                     </Nav>
                 </Navbar>
             </div>

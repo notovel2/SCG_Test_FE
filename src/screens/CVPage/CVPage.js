@@ -16,7 +16,6 @@ class CVPage extends React.Component {
                             <Card.Title>Experience</Card.Title>
                             {works.map(work => this.workExperienceRender(work))}
                         </div>
-
                         <Row>
                             <div className="col-sm-6 section">
                                 <Card.Title>Skills</Card.Title>
@@ -24,6 +23,7 @@ class CVPage extends React.Component {
                             </div>
                             <div className="col-sm-6 section">
                                 <Card.Title>Side Projects</Card.Title>
+                                {this.sideProjectRender(sideProject)}
                             </div>
                         </Row>
                     </Card.Body>
@@ -46,20 +46,47 @@ class CVPage extends React.Component {
         return data.map(skillItem => {
             if (skillItem.isDataObject) {
                 return (
-                    <Card.Subtitle>{skillItem.title}</Card.Subtitle>
+                    <div>
+                        <Card.Subtitle>{skillItem.title}</Card.Subtitle>
+                        {skillItem.data.map(value => (
+                            <Row style={{alignItems: 'baseline', marginRight: 0, marginLeft: '20px'}}>
+                                <Card.Subtitle style={{marginRight: '5px'}}>● {value.title}</Card.Subtitle>
+                                <Card.Text>{value.itemslist.join(', ')}
+                                </Card.Text>
+                            </Row>
+                        ))}
+                    </div>
                 )
             } else {
                 return (
-                    <div>
-                        <Row style={{alignItems: 'baseline', flexDirection: 'row'}}>
-                            <Card.Subtitle style={{marginRight: '5px'}}>{`${skillItem.title}:`}</Card.Subtitle>
-                            <Card.Text>{skillItem.data.join(', ')}</Card.Text>
-                        </Row>
-                    </div>
+                    <Row style={{alignItems: 'baseline', marginRight: 0, marginLeft: 0}}>
+                        <Card.Subtitle style={{marginRight: '5px'}}>{`${skillItem.title}:`}</Card.Subtitle>
+                        <Card.Text>{skillItem.data.join(', ')}</Card.Text>
+                    </Row>
                 )
             }
             
         })
+    }
+
+    sideProjectRender(data) {
+        console.log(data);
+        
+        return (
+            <div>
+                {data.map(section => (
+                    <div style={{marginBottom: '1rem'}}>
+                        <Card.Subtitle>{section.title}</Card.Subtitle>
+                        {section.data.map(value => (
+                            <div>
+                                <Card.Text style={{marginBottom: '0px'}}>{value.title}</Card.Text>
+                                <Card.Link href={value.url}>{value.url}</Card.Link>
+                            </div> 
+                        ))}
+                    </div>
+                ))}
+            </div>
+        )
     }
 
     bulletSection(text) {
