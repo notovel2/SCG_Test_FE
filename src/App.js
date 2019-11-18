@@ -6,6 +6,7 @@ import CVPage from './screens/CVPage/CVPage';
 import HomePage from './screens/HomePage/HomePage';
 import SCGPage from './screens/SCGPage/SCGPage';
 import SearchPlaces from './screens/SearchPlaces/SearchPlaces';
+import Footer from './components/Footer/Footer';
 
 class App extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
       <div className="App">
         <TopBar/>
         {this.renderBody()}
+        <Footer/>
       </div>
     );
   }
